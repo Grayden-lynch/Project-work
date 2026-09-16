@@ -10,7 +10,7 @@ while expense != 0:
   expense = float(input("Enter expense(0 to stop):"))
 print(f"Your final balance is {balance}.")
 
-print("hello")
+print("gus")
 
 
 
