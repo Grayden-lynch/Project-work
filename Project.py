@@ -1,8 +1,8 @@
 login = input(Enter your name: )
 print(f"Hello {login} welcome to SpendSmart")
 
-paycheck = int(input("Enter paycheck amount:"))
-print(paycheck)
+paycheck = float(input("Enter paycheck amount:"))
+balance = paycheck
 
 
 
