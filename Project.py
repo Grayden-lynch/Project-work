@@ -32,7 +32,12 @@ while expense != 0:
     expense = float(input("Enter expense(0 to stop):"))
   balance = balance - expense
   expense = float(input("Enter expense(0 to stop):"))
-
+saving = input("Would you like to save any money?(Y/N)")
+if saving == "Y":
+  yes = float(input("How much would you like to put in savings?"))
+  balance = balance - yes
+else:
+  print(f"Your final balance is {balance}.")
 print(f"Your final balance is {balance}.")
 
 
