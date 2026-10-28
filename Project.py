@@ -33,7 +33,7 @@ for expenses in expenses_list:
   expense = float(input(f"{expenses} cost:"))
   if expense < 0:
     print("You typed in a negative expense try again")
-    expense = float(input(f"Enter "))
+    expense = float(input(f"{expenses} cost:"))
   balance = balance - expense
 
 print(f"Your final balance is {balance}.")
