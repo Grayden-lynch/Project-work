@@ -5,6 +5,8 @@ users = {"Grayden":"Pass1",
 
 def login_system(users):
   login = input("Enter your name: ")
+  while login not in users:
+    login = input("Enter your name: ")
   if login in users:
     password = input("Enter password: ")
     #Loop until password is correct       
@@ -25,8 +27,12 @@ balance = paycheck
 expense = float(input("Enter expense(0 to stop):"))
 
 while expense != 0:
+  if expense < 0:
+    print("You typed in a negative expense try again")
+    expense = float(input("Enter expense(0 to stop):"))
   balance = balance - expense
   expense = float(input("Enter expense(0 to stop):"))
+
 print(f"Your final balance is {balance}.")
 
 
