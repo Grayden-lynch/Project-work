@@ -3,6 +3,10 @@ users = {"Grayden":"Pass1",
          "Isaiah":"Pass2",
          "Gus":"Pass3"}
 
+expenses_list = ["Housing", "Food", "Transportation", "Debt payments", "Savings", "Other"]
+
+
+
 def login_system(users):
   login = input("Enter your name: ")
   while login not in users:
@@ -24,27 +28,15 @@ print(f"Hello {login} welcome to SpendSmart")
 
 paycheck = float(input("Enter paycheck amount:"))
 balance = paycheck
-expense = float(input("Enter expense(0 to stop):"))
 
-while expense != 0:
+for expenses in expenses_list:
+  expense = float(input(f"{expenses} cost:"))
   if expense < 0:
     print("You typed in a negative expense try again")
-    expense = float(input("Enter expense(0 to stop):"))
+    expense = float(input(f"Enter "))
   balance = balance - expense
-  expense = float(input("Enter expense(0 to stop):"))
-# saving money feature and final balance output below
-saving = input("Would you like to save any money?(Y/N): ")
-if saving == "Y":
-  yes = float(input("How much would you like to put in savings?: "))
-  balance = balance - yes
-else:
-  print(f"Your final balance is {balance}.")
-  print(f"You have 0 in savings")
 
-savings = 0
-total_savings = savings + yes
 print(f"Your final balance is {balance}.")
-print(f"You have {total_savings} in savings")
 
 
 
