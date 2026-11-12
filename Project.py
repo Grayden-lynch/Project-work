@@ -6,6 +6,16 @@ users = {"Grayden":"Pass1",
 expenses_list = ["Housing", "Food", "Transportation", "Debt payments", "Savings", "Other"]
 
 
+class Budget:
+  def __init__(self, paycheck):
+    self.paycheck = paycheck
+    self.balance = paycheck
+  def add_expense(self, amount):
+    self.balance -= amount
+  def display_balance(self):
+    print(f"Your final balance is {self.balance}")
+
+
 
 def login_system(users):
   login = input("Enter your name: ")
@@ -27,16 +37,17 @@ login = login_system(users)
 print(f"Hello {login} welcome to SpendSmart")
 
 paycheck = float(input("Enter paycheck amount:"))
-balance = paycheck
+balance = Budget(paycheck)
 
 for expenses in expenses_list:
   expense = float(input(f"{expenses} cost:"))
   if expense < 0:
     print("You typed in a negative expense try again")
     expense = float(input(f"{expenses} cost:"))
-  balance = balance - expense
+  balance.add_expense(expense)
 
-print(f"Your final balance is {balance}.")
+balance.display_balance()
+
 
 
 
