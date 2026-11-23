@@ -19,7 +19,16 @@ class Budget:
         print(f"Your final balance is {self.balance}")
         print("Budget information:", self.budget_info)
 
+def budget_status(paycheck, remaining_balance):
+    total_expenses = paycheck - remaining_balance
+    print(f"Total expenses: ${total_expenses:,.2f}")
 
+    if remaining_balance < 0:
+        print(f"You are over budget by ${abs(remaining_balance):,.2f}.")
+    elif remaining_balance == 0:
+        print("You have used your entire paycheck.")
+    else:
+        print(f"You are within budget with ${remaining_balance:,.2f} left.")
 
 def login_system(users):
   login = input("Enter your name: ")
@@ -66,7 +75,7 @@ for expenses in expenses_list:
 file.close()
 
 balance.display_balance()
-
+budget_status(paycheck, balance.balance)
 
 
 
