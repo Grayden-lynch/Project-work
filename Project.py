@@ -1,3 +1,4 @@
+#users and their passwords
 users = {"Grayden":"Pass1",
          "Isaiah":"Pass2",
          "Gus":"Pass3"}
