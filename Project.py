@@ -1,4 +1,3 @@
-#Holds users and their passwords
 users = {"Grayden":"Pass1",
          "Isaiah":"Pass2",
          "Gus":"Pass3"}
@@ -7,13 +6,17 @@ expenses_list = ["Housing", "Food", "Transportation", "Debt payments", "Savings"
 
 
 class Budget:
-  def __init__(self, paycheck):
-    self.paycheck = paycheck
-    self.balance = paycheck
-  def add_expense(self, amount):
-    self.balance -= amount
-  def display_balance(self):
-    print(f"Your final balance is {self.balance}")
+    def __init__(self, paycheck):
+        self.paycheck = paycheck
+        self.balance = paycheck
+        self.budget_info = ("SpendSmart", "Monthly Budget", "USD")
+
+    def add_expense(self, amount):
+        self.balance -= amount
+
+    def display_balance(self):
+        print(f"Your final balance is {self.balance}")
+        print("Budget information:", self.budget_info)
 
 
 
@@ -39,7 +42,6 @@ print(f"Hello {login} welcome to SpendSmart")
 paycheck = float(input("Enter paycheck amount:"))
 balance = Budget(paycheck)
 
-# Open file to write expenses
 file = open("expenses.txt", "w")
 
 file.write("Category,Expense\n")
