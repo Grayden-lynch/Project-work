@@ -39,15 +39,27 @@ print(f"Hello {login} welcome to SpendSmart")
 paycheck = float(input("Enter paycheck amount:"))
 balance = Budget(paycheck)
 
+# Open file to write expenses
+file = open("expenses.txt", "w")
+
+file.write("Category,Expense\n")
+
 for expenses in expenses_list:
-  expense = float(input(f"{expenses} cost:"))
-  if expense < 0:
-    print("You typed in a negative expense try again")
-    expense = float(input(f"{expenses} cost:"))
-  balance.add_expense(expense)
+    expense = float(input(f"{expenses} cost: "))
+
+    if expense < 0:
+        print("You typed in a negative expense. Try again.")
+        expense = float(input(f"{expenses} cost: "))
+
+    balance.add_expense(expense)
+
+    # Write expense to file
+    file.write(f"{expenses},{expense}\n")
+
+
+file.close()
 
 balance.display_balance()
-
 
 
 
