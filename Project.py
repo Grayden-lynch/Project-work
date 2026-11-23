@@ -1,10 +1,11 @@
+#users who have accounts and passwords
 users = {"Grayden":"Pass1",
          "Isaiah":"Pass2",
          "Gus":"Pass3"}
 
 expenses_list = ["Housing", "Food", "Transportation", "Debt payments", "Savings", "Other"]
 
-
+#class with three methods
 class Budget:
     def __init__(self, paycheck):
         self.paycheck = paycheck
@@ -13,13 +14,12 @@ class Budget:
 
     def add_expense(self, amount):
         self.balance -= amount
-
+# amount leftover after all expenses are covered
     def display_balance(self):
         print(f"Your final balance is {self.balance}")
         print("Budget information:", self.budget_info)
 
-
-
+# opening statments that let users login
 def login_system(users):
   login = input("Enter your name: ")
   while login not in users:
@@ -41,7 +41,7 @@ print(f"Hello {login} welcome to SpendSmart")
 
 paycheck = float(input("Enter paycheck amount:"))
 balance = Budget(paycheck)
-
+# file to display users information in a clean way
 file = open("expenses.txt", "w")
 
 file.write("Category,Expense\n")
