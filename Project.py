@@ -45,7 +45,7 @@ def get_paycheck():
 paycheck = get_paycheck()
 balance = Budget(paycheck)
 
-file = open("expenses.txt", "w")
+file = open("expenses.csv", "w")
 
 file.write("Category,Expense\n")
 
